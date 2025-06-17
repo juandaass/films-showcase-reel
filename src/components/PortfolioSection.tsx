@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Play, Award, Eye, Calendar } from "lucide-react";
 
@@ -7,9 +8,9 @@ const portfolioItems = [
     title: "SANGRE Y ORO",
     category: "Video Musical",
     year: "2024",
-    awards: "Winner - Festival Internacional de Cine",
-    description: "Una obra maestra visual que fusiona narrativa clásica con técnicas cinematográficas de vanguardia.",
-    image: "/placeholder.svg",
+    awards: "Ganador - Festival Internacional de Cine",
+    description: "Un video musical que la gente no para de compartir. Narrativa súper cool con técnicas que nadie más está usando.",
+    image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=800&h=600&fit=crop&crop=center",
     featured: true
   },
   {
@@ -17,9 +18,9 @@ const portfolioItems = [
     title: "ALMAS DE ACERO",
     category: "Cortometraje",
     year: "2023",
-    awards: "Best Short Film - Festival de Cine Independiente",
-    description: "Un relato conmovedor sobre la resiliencia humana en tiempos de adversidad, filmado con una estética visual impactante.",
-    image: "/placeholder.svg",
+    awards: "Mejor Cortometraje - Festival de Cine Independiente",
+    description: "Una historia que te deja pensando. Sobre gente real y situaciones que todos vivimos, pero filmado de una manera única.",
+    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=600&fit=crop&crop=center",
     featured: false
   },
   {
@@ -27,9 +28,9 @@ const portfolioItems = [
     title: "ECOS DEL PASADO",
     category: "Documental",
     year: "2022",
-    awards: "Audience Award - Festival de Documentales",
-    description: "Una exploración profunda de la historia olvidada, contada a través de testimonios y material de archivo restaurado.",
-    image: "/placeholder.svg",
+    awards: "Premio del Público - Festival de Documentales",
+    description: "Un documental que rescata historias increíbles que casi nadie conocía. Material de archivo que encontramos y restauramos.",
+    image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?w=800&h=600&fit=crop&crop=center",
     featured: false
   },
   {
@@ -37,9 +38,9 @@ const portfolioItems = [
     title: "LUXURY RIDE",
     category: "Comercial",
     year: "2024",
-    awards: "Best Commercial - Advertising Awards",
-    description: "Un comercial de lujo que redefine la elegancia y el estilo, con una cinematografía impecable y una banda sonora envolvente.",
-    image: "/placeholder.svg",
+    awards: "Mejor Comercial - Advertising Awards",
+    description: "Un comercial que no parece comercial. Elegante, con estilo, y que de verdad te da ganas de tener el producto.",
+    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&h=600&fit=crop&crop=center",
     featured: true
   },
   {
@@ -47,9 +48,9 @@ const portfolioItems = [
     title: "NOCHE ETERNA",
     category: "Video Musical",
     year: "2023",
-    awards: "Nominee - Music Video Awards",
-    description: "Una experiencia visual onírica que complementa la música con una narrativa abstracta y efectos visuales sorprendentes.",
-    image: "/placeholder.svg",
+    awards: "Nominado - Music Video Awards",
+    description: "Una experiencia visual súper trip que va perfecto con la música. Efectos que nadie esperaba y que quedaron increíbles.",
+    image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=800&h=600&fit=crop&crop=center",
     featured: false
   },
   {
@@ -57,9 +58,9 @@ const portfolioItems = [
     title: "SOMBRAS DEL IMPERIO",
     category: "Cortometraje",
     year: "2022",
-    awards: "Official Selection - Film Festival",
-    description: "Un thriller psicológico que explora los límites de la ambición y el poder, con actuaciones intensas y una atmósfera inquietante.",
-    image: "/placeholder.svg",
+    awards: "Selección Oficial - Film Festival",
+    description: "Un thriller que te mantiene al borde del asiento. Sobre poder, ambición y hasta dónde está dispuesta a llegar la gente.",
+    image: "https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?w=800&h=600&fit=crop&crop=center",
     featured: false
   }
 ];
@@ -87,18 +88,18 @@ export function PortfolioSection() {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 mb-6 bg-gradient-to-r from-cinema-gold/10 to-cinema-warm-gold/10 border border-cinema-gold/30 rounded-full px-6 py-2">
             <Award className="w-5 h-5 text-cinema-gold" />
-            <span className="text-cinema-gold text-sm font-bold tracking-[0.2em]">PORTFOLIO PREMIADO</span>
+            <span className="text-cinema-gold text-sm font-bold tracking-[0.2em]">LO QUE HEMOS HECHO</span>
           </div>
           
           <h2 className="text-5xl md:text-7xl font-cinzel font-black mb-6">
-            <span className="gradient-text-gold">OBRAS</span>
-            <span className="text-white"> QUE </span> 
-            <span className="gradient-text-red">CONQUISTAN</span>
+            <span className="gradient-text-gold">NUESTROS</span>
+            <span className="text-white"> </span> 
+            <span className="gradient-text-red">TRABAJOS</span>
           </h2>
           
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Cada proyecto es una <span className="gradient-text-gold">masterpiece</span> diseñada para 
-            <span className="gradient-text-red"> cautivar audiencias globales</span>
+            Cada proyecto es algo <span className="gradient-text-gold">épico</span> que 
+            <span className="gradient-text-red"> la gente ama</span>
           </p>
         </div>
 
@@ -135,7 +136,7 @@ export function PortfolioSection() {
               <div className="relative aspect-video overflow-hidden">
                 <img 
                   src={item.image} 
-                  alt={item.title}
+                  alt={`Proyecto ${item.title} - ${item.category}`}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 
@@ -153,7 +154,7 @@ export function PortfolioSection() {
                 {/* Featured badge */}
                 {item.featured && (
                   <div className="absolute top-4 left-4 bg-gradient-to-r from-cinema-fire-red to-cinema-sunset-orange text-white px-3 py-1 rounded-full text-xs font-bold tracking-wider">
-                    DESTACADO
+                    TOP
                   </div>
                 )}
 
@@ -200,7 +201,7 @@ export function PortfolioSection() {
         {/* Call to action */}
         <div className="text-center mt-16">
           <button className="bg-gradient-to-r from-cinema-gold to-cinema-warm-gold text-black font-bold py-4 px-12 rounded-full hover:scale-105 transition-all duration-300">
-            VER TODO EL PORTFOLIO
+            VER TODO
           </button>
         </div>
       </div>

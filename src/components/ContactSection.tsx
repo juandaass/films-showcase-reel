@@ -4,9 +4,9 @@ import { Mail, Phone, MapPin, Send, Star } from "lucide-react";
 const contactInfo = [
   {
     icon: Mail,
-    title: "Email Directo",
+    title: "Email",
     value: "hola@720films.com",
-    description: "Respuesta en menos de 2 horas"
+    description: "Te respondemos súper rápido"
   },
   {
     icon: Phone,
@@ -16,9 +16,9 @@ const contactInfo = [
   },
   {
     icon: MapPin,
-    title: "Oficinas",
+    title: "Oficina",
     value: "Madrid, España",
-    description: "Reuniones presenciales disponibles"
+    description: "Podemos vernos en persona"
   }
 ];
 
@@ -36,17 +36,17 @@ export function ContactSection() {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 mb-6 bg-gradient-to-r from-cinema-fire-red/10 to-cinema-sunset-orange/10 border border-cinema-fire-red/30 rounded-full px-6 py-2">
             <Star className="w-5 h-5 text-cinema-fire-red" />
-            <span className="text-cinema-fire-red text-sm font-bold tracking-[0.2em]">CONTACTO DIRECTO</span>
+            <span className="text-cinema-fire-red text-sm font-bold tracking-[0.2em]">HABLEMOS</span>
           </div>
           
           <h2 className="text-5xl md:text-7xl font-cinzel font-black mb-6">
-            <span className="text-white">COMIENZA TU </span>
-            <span className="gradient-text-red">LEYENDA</span>
+            <span className="text-white">TRABAJEMOS </span>
+            <span className="gradient-text-red">JUNTOS</span>
           </h2>
           
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Transforma tu <span className="gradient-text-gold">visión creativa</span> en una 
-            <span className="gradient-text-red"> obra maestra cinematográfica</span>
+            Cuéntanos tu <span className="gradient-text-gold">idea loca</span> y la convertimos en 
+            <span className="gradient-text-red"> algo increíble</span>
           </p>
         </div>
 
@@ -54,12 +54,12 @@ export function ContactSection() {
           {/* Contact info */}
           <div>
             <h3 className="text-3xl font-cinzel font-bold text-white mb-8">
-              Hablemos de tu <span className="gradient-text-gold">Proyecto</span>
+              Cuéntanos de tu <span className="gradient-text-gold">Proyecto</span>
             </h3>
             
             <p className="text-gray-300 mb-12 leading-relaxed">
-              Cada proyecto comienza con una conversación. Cuéntanos tu visión y te mostraremos 
-              cómo podemos elevarla a niveles cinematográficos extraordinarios.
+              Todo empieza con una buena charla. Nos cuentas qué tienes en mente y nosotros 
+              te mostramos cómo lo podemos hacer realidad de una manera que te va a encantar.
             </p>
 
             <div className="space-y-8">
@@ -92,10 +92,10 @@ export function ContactSection() {
             <div className="mt-12 p-6 bg-gradient-to-r from-cinema-gold/10 to-cinema-warm-gold/10 border border-cinema-gold/30 rounded-2xl">
               <div className="flex items-center gap-2 mb-3">
                 <Star className="w-5 h-5 text-cinema-gold fill-current" />
-                <span className="text-cinema-gold font-bold">Respuesta Garantizada</span>
+                <span className="text-cinema-gold font-bold">Te Respondemos Rápido</span>
               </div>
               <p className="text-gray-300 text-sm">
-                Nos comprometemos a responder tu consulta en menos de 2 horas durante horario laboral.
+                Nos gusta responder rápido, así que seguramente te contestemos en menos de 2 horas.
               </p>
             </div>
           </div>
@@ -105,11 +105,11 @@ export function ContactSection() {
             <form className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-white font-medium mb-2">Nombre *</label>
+                  <label className="block text-white font-medium mb-2">Tu Nombre *</label>
                   <input
                     type="text"
                     className="w-full bg-black/50 border border-cinema-gold/30 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:border-cinema-gold focus:outline-none transition-colors duration-300"
-                    placeholder="Tu nombre"
+                    placeholder="Como te llamas"
                   />
                 </div>
                 
@@ -124,32 +124,33 @@ export function ContactSection() {
               </div>
 
               <div>
-                <label className="block text-white font-medium mb-2">Tipo de Proyecto</label>
+                <label className="block text-white font-medium mb-2">Qué Tipo de Proyecto</label>
                 <select className="w-full bg-black/50 border border-cinema-gold/30 rounded-xl px-4 py-3 text-white focus:border-cinema-gold focus:outline-none transition-colors duration-300">
                   <option>Video Musical</option>
                   <option>Cortometraje</option>
                   <option>Documental</option>
                   <option>Comercial</option>
-                  <option>Otro</option>
+                  <option>Algo diferente</option>
                 </select>
               </div>
 
               <div>
-                <label className="block text-white font-medium mb-2">Presupuesto Estimado</label>
+                <label className="block text-white font-medium mb-2">Presupuesto Aprox</label>
                 <select className="w-full bg-black/50 border border-cinema-gold/30 rounded-xl px-4 py-3 text-white focus:border-cinema-gold focus:outline-none transition-colors duration-300">
                   <option>€5,000 - €15,000</option>
                   <option>€15,000 - €30,000</option>
                   <option>€30,000 - €50,000</option>
                   <option>€50,000+</option>
+                  <option>Hablemos primero</option>
                 </select>
               </div>
 
               <div>
-                <label className="block text-white font-medium mb-2">Cuéntanos tu Visión *</label>
+                <label className="block text-white font-medium mb-2">Cuéntanos Tu Idea *</label>
                 <textarea
                   rows={5}
                   className="w-full bg-black/50 border border-cinema-gold/30 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:border-cinema-gold focus:outline-none transition-colors duration-300 resize-none"
-                  placeholder="Describe tu proyecto, estilo deseado, referencias, fechas importantes..."
+                  placeholder="Describe tu proyecto, qué estilo te gusta, referencias que tengas, fechas importantes..."
                 />
               </div>
 
@@ -158,15 +159,15 @@ export function ContactSection() {
                 className="w-full bg-gradient-to-r from-cinema-fire-red to-cinema-sunset-orange text-white font-bold py-4 rounded-xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3"
               >
                 <Send className="w-5 h-5" />
-                <span>ENVIAR PROPUESTA</span>
+                <span>ENVIAR MENSAJE</span>
               </button>
             </form>
 
             {/* Trust indicators */}
             <div className="mt-8 pt-6 border-t border-cinema-gold/20">
               <div className="flex items-center justify-center gap-6 text-sm text-gray-400">
-                <span>✓ Respuesta en 2h</span>
-                <span>✓ Propuesta gratuita</span>
+                <span>✓ Respuesta rápida</span>
+                <span>✓ Propuesta gratis</span>
                 <span>✓ 100% confidencial</span>
               </div>
             </div>

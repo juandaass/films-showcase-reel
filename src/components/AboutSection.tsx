@@ -2,27 +2,27 @@
 import { Award, Users, Calendar, Trophy, Target, Heart } from "lucide-react";
 
 const stats = [
-  { icon: Award, number: "45+", label: "Premios Internacionales", description: "Reconocimientos en festivales de prestigio mundial" },
-  { icon: Users, number: "200+", label: "Clientes Satisfechos", description: "Artistas y marcas que confían en nuestra visión" },
-  { icon: Calendar, number: "8", label: "Años de Excelencia", description: "Redefiniendo estándares desde 2016" },
-  { icon: Trophy, number: "120+", label: "Proyectos Realizados", description: "Cada uno una obra maestra única" }
+  { icon: Award, number: "45+", label: "Premios Ganados", description: "En festivales de todo el mundo" },
+  { icon: Users, number: "200+", label: "Clientes Contentos", description: "Artistas y marcas que repiten con nosotros" },
+  { icon: Calendar, number: "8", label: "Años en Esto", description: "Mejorando desde 2016" },
+  { icon: Trophy, number: "120+", label: "Proyectos Hechos", description: "Cada uno único y especial" }
 ];
 
 const values = [
   {
     icon: Target,
-    title: "Visión Artística",
-    description: "Cada proyecto nace de una visión única que trasciende lo convencional"
+    title: "Visión Clara",
+    description: "Cada proyecto tiene una idea súper clara que lo hace diferente a todo lo demás"
   },
   {
     icon: Heart,
-    title: "Pasión Cinematográfica", 
-    description: "El amor por el cine impulsa cada decisión creativa y técnica"
+    title: "Nos Encanta lo que Hacemos", 
+    description: "La pasión se nota en cada video, cada edición, cada detalle que cuidamos"
   },
   {
     icon: Award,
-    title: "Excelencia Sin Límites",
-    description: "Buscamos la perfección en cada frame, cada corte, cada detalle"
+    title: "Hacemos Todo Bien",
+    description: "No nos conformamos con 'está bien'. Queremos que quede increíble"
   }
 ];
 
@@ -44,14 +44,13 @@ export function AboutSection() {
           </div>
           
           <h2 className="text-5xl md:text-7xl font-cinzel font-black mb-6">
-            <span className="gradient-text-gold">MAESTROS</span>
-            <span className="text-white"> DEL </span>
-            <span className="gradient-text-red">ARTE</span>
+            <span className="gradient-text-gold">QUIÉNES</span>
+            <span className="text-white"> SOMOS</span>
           </h2>
           
           <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            Somos <span className="gradient-text-gold">visionarios cinematográficos</span> que transformamos ideas en 
-            <span className="gradient-text-red"> experiencias audiovisuales extraordinarias</span>
+            Somos <span className="gradient-text-gold">un equipo creativo</span> que hace 
+            <span className="gradient-text-red"> videos increíbles</span> desde hace un buen rato
           </p>
         </div>
 
@@ -89,38 +88,38 @@ export function AboutSection() {
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
           <div>
             <h3 className="text-4xl font-cinzel font-bold text-white mb-6">
-              Una <span className="gradient-text-gold">Pasión</span> que se Convirtió en <span className="gradient-text-red">Leyenda</span>
+              Todo Empezó con <span className="gradient-text-gold">Ganas</span> de Hacer <span className="gradient-text-red">Algo Diferente</span>
             </h3>
             
             <div className="space-y-6 text-gray-300 leading-relaxed">
               <p>
-                Desde 2016, hemos redefinido los estándares de la producción audiovisual, 
-                creando obras que no solo capturan momentos, sino que <span className="text-cinema-gold font-medium">crean emociones</span> 
-                y construyen legados.
+                Desde 2016 venimos haciendo videos que la gente recuerda. No somos de los que hacen 
+                todo igual - cada proyecto <span className="text-cinema-gold font-medium">tiene su propia personalidad</span> 
+                y su propia historia que contar.
               </p>
               
               <p>
-                Nuestro enfoque combina <span className="text-cinema-gold font-medium">técnica cinematográfica clásica</span> 
-                con tecnología de vanguardia, resultando en producciones que compiten 
-                en los festivales más prestigiosos del mundo.
+                Mezclamos <span className="text-cinema-gold font-medium">técnicas clásicas de cine</span> 
+                con la tecnología más nueva, y el resultado son videos que compiten 
+                en festivales internacionales y que además se vuelven virales.
               </p>
               
               <p>
-                Cada proyecto es una <span className="text-cinema-fire-red font-medium">colaboración íntima</span> 
-                entre nuestra visión artística y la esencia única de nuestros clientes.
+                Cada proyecto es <span className="text-cinema-fire-red font-medium">una colaboración real</span> 
+                entre lo que nosotros sabemos hacer y lo que tú quieres contar.
               </p>
             </div>
             
             <button className="mt-8 bg-gradient-to-r from-cinema-fire-red to-cinema-sunset-orange text-white font-bold py-4 px-8 rounded-full hover:scale-105 transition-all duration-300">
-              CONOCE NUESTRO PROCESO
+              CONOCE CÓMO TRABAJAMOS
             </button>
           </div>
           
           <div className="relative">
             <div className="aspect-square rounded-3xl overflow-hidden border-2 border-cinema-gold/30">
               <img 
-                src="/placeholder.svg" 
-                alt="Equipo 720 Films"
+                src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=600&h=600&fit=crop&crop=faces" 
+                alt="Equipo de 720 Films trabajando en set de grabación"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-cinema-fire-red/20 to-transparent" />
@@ -131,7 +130,7 @@ export function AboutSection() {
               <div className="text-center">
                 <Award className="w-8 h-8 mx-auto mb-2" />
                 <div className="text-sm font-bold">MEJOR PRODUCTORA</div>
-                <div className="text-xs">Festival Internacional 2024</div>
+                <div className="text-xs">Festival 2024</div>
               </div>
             </div>
           </div>
@@ -140,7 +139,7 @@ export function AboutSection() {
         {/* Values */}
         <div>
           <h3 className="text-4xl font-cinzel font-bold text-center text-white mb-12">
-            Nuestros <span className="gradient-text-gold">Valores</span>
+            En Qué <span className="gradient-text-gold">Creemos</span>
           </h3>
           
           <div className="grid md:grid-cols-3 gap-8">

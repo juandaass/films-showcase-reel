@@ -1,36 +1,37 @@
+
 import { Video, Film, Camera, Edit, Award, Star } from "lucide-react";
 
 const services = [
   {
     icon: Video,
-    title: "Videos Musicales de Élite",
-    description: "Producciones cinematográficas que elevan la música a arte visual puro. Conceptos únicos, narrativas impactantes y técnicas de vanguardia.",
-    features: ["Concepto artístico exclusivo", "Cinematografía 8K", "Post-producción avanzada", "Color grading profesional"],
-    price: "Desde €15,000",
+    title: "Videos Musicales",
+    description: "Videos que hacen que tu música se vuelva viral. Conceptos únicos, buena onda y técnicas que están rompiendo en redes.",
+    features: ["Concepto creativo único", "Filmación en 8K", "Edición que está de otro nivel", "Color grading profesional"],
+    price: "Hablemos de presupuesto",
     popular: true
   },
   {
     icon: Film,
-    title: "Cortometrajes de Autor",
-    description: "Historias que desafían los límites del cine narrativo. Guiones originales, dirección impecable y un sello artístico inconfundible.",
-    features: ["Guion original a medida", "Dirección de actores experta", "Diseño de producción detallado", "Banda sonora original"],
-    price: "Desde €20,000",
+    title: "Cortometrajes",
+    description: "Historias que la gente no olvida. Guiones originales, buena dirección y ese toque especial que nos caracteriza.",
+    features: ["Guion original para ti", "Dirección de actores", "Diseño de producción detallado", "Banda sonora original"],
+    price: "Charlemos",
     popular: false
   },
   {
     icon: Camera,
-    title: "Documentales de Impacto",
-    description: "Narrativas reales que inspiran, educan y transforman. Investigación exhaustiva, testimonios conmovedores y un compromiso con la verdad.",
-    features: ["Investigación y guionización", "Equipo de rodaje internacional", "Edición y montaje creativo", "Distribución estratégica"],
-    price: "Desde €25,000",
+    title: "Documentales",
+    description: "Historias reales que importan. Investigamos bien, conseguimos testimonios increíbles y lo contamos de una manera que conecta.",
+    features: ["Investigación y guión", "Equipo profesional", "Edición creativa", "Te ayudamos con la distribución"],
+    price: "Depende del proyecto",
     popular: false
   },
   {
     icon: Edit,
-    title: "Comerciales Premium",
-    description: "Campañas publicitarias que conectan con el corazón del consumidor. Ideas innovadoras, producción impecable y resultados medibles.",
-    features: ["Estrategia creativa integral", "Casting de talentos exclusivo", "Dirección de arte de lujo", "Análisis de resultados post-campaña"],
-    price: "Desde €30,000",
+    title: "Comerciales",
+    description: "Publicidad que no da cringe. Ideas que funcionan, producción impecable y resultados que se ven en números.",
+    features: ["Estrategia creativa completa", "Casting de talentos", "Dirección de arte", "Medimos resultados"],
+    price: "Según la campaña",
     popular: false
   }
 ];
@@ -49,17 +50,17 @@ export function ServicesSection() {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 mb-6 bg-gradient-to-r from-cinema-fire-red/10 to-cinema-sunset-orange/10 border border-cinema-fire-red/30 rounded-full px-6 py-2">
             <Star className="w-5 h-5 text-cinema-fire-red" />
-            <span className="text-cinema-fire-red text-sm font-bold tracking-[0.2em]">SERVICIOS PREMIUM</span>
+            <span className="text-cinema-fire-red text-sm font-bold tracking-[0.2em]">NUESTROS SERVICIOS</span>
           </div>
           
           <h2 className="text-5xl md:text-7xl font-cinzel font-black mb-6">
-            <span className="text-white">MAESTRÍA </span>
-            <span className="gradient-text-red">AUDIOVISUAL</span>
+            <span className="text-white">LO QUE </span>
+            <span className="gradient-text-red">HACEMOS</span>
           </h2>
           
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Transformamos <span className="gradient-text-gold">visiones creativas</span> en 
-            <span className="gradient-text-red"> experiencias cinematográficas</span> que marcan historia
+            Convertimos tus <span className="gradient-text-gold">ideas locas</span> en 
+            <span className="gradient-text-red"> videos que la gente ama</span>
           </p>
         </div>
 
@@ -80,7 +81,7 @@ export function ServicesSection() {
               {/* Popular badge */}
               {service.popular && (
                 <div className="absolute -top-3 -right-3 bg-gradient-to-r from-cinema-gold to-cinema-warm-gold text-black px-4 py-2 rounded-full text-xs font-bold tracking-wider rotate-12">
-                  MÁS POPULAR
+                  EL FAVORITO
                 </div>
               )}
 
@@ -124,7 +125,7 @@ export function ServicesSection() {
                   : 'bg-gradient-to-r from-cinema-fire-red to-cinema-sunset-orange text-white hover:shadow-2xl hover:shadow-cinema-fire-red/30'
                 }
               `}>
-                SOLICITAR PRESUPUESTO
+                HABLEMOS
               </button>
             </div>
           ))}
@@ -133,13 +134,13 @@ export function ServicesSection() {
         {/* Bottom CTA */}
         <div className="text-center bg-gradient-to-r from-cinema-deep-black via-cinema-blood-red/10 to-cinema-deep-black rounded-3xl p-12 border border-cinema-gold/20">
           <h3 className="text-3xl font-cinzel font-bold text-white mb-4">
-            ¿Tienes un proyecto <span className="gradient-text-gold">único</span>?
+            ¿Tienes algo <span className="gradient-text-gold">diferente</span> en mente?
           </h3>
           <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-            Creamos soluciones audiovisuales personalizadas para proyectos excepcionales que requieren un enfoque artístico exclusivo.
+            También hacemos proyectos súper específicos para ideas que se salen de lo común. Si lo puedes imaginar, probablemente lo podemos hacer.
           </p>
           <button className="bg-gradient-to-r from-cinema-fire-red to-cinema-sunset-orange text-white font-bold py-4 px-12 rounded-full hover:scale-105 transition-all duration-300">
-            CONVERSEMOS SOBRE TU VISIÓN
+            CUÉNTANOS TU IDEA
           </button>
         </div>
       </div>
