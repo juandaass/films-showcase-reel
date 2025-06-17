@@ -1,13 +1,32 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { AppSidebar } from "@/components/AppSidebar";
+import { HeroSection } from "@/components/HeroSection";
+import { PortfolioSection } from "@/components/PortfolioSection";
+import { ServicesSection } from "@/components/ServicesSection";
+import { AboutSection } from "@/components/AboutSection";
+import { ContactSection } from "@/components/ContactSection";
+import { Footer } from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <SidebarProvider>
+      <div className="min-h-screen flex w-full">
+        <AppSidebar />
+        <main className="flex-1">
+          <div className="fixed top-4 left-4 z-50">
+            <SidebarTrigger className="bg-white/90 backdrop-blur-sm hover:bg-white shadow-lg" />
+          </div>
+          
+          <HeroSection />
+          <PortfolioSection />
+          <ServicesSection />
+          <AboutSection />
+          <ContactSection />
+          <Footer />
+        </main>
       </div>
-    </div>
+    </SidebarProvider>
   );
 };
 
