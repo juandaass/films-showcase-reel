@@ -1,144 +1,168 @@
 
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Users, Award, Target, Lightbulb, Crown, Zap } from "lucide-react";
+import { Award, Users, Calendar, Trophy, Target, Heart } from "lucide-react";
+
+const stats = [
+  { icon: Award, number: "45+", label: "Premios Internacionales", description: "Reconocimientos en festivales de prestigio mundial" },
+  { icon: Users, number: "200+", label: "Clientes Satisfechos", description: "Artistas y marcas que confían en nuestra visión" },
+  { icon: Calendar, number: "8", label: "Años de Excelencia", description: "Redefiniendo estándares desde 2016" },
+  { icon: Trophy, number: "120+", label: "Proyectos Realizados", description: "Cada uno una obra maestra única" }
+];
 
 const values = [
   {
-    icon: Crown,
-    title: "Excelencia Absoluta",
-    description: "Cada frame es una obra de arte meticulosamente crafted para la eternidad cinematográfica"
+    icon: Target,
+    title: "Visión Artística",
+    description: "Cada proyecto nace de una visión única que trasciende lo convencional"
   },
   {
-    icon: Zap,
-    title: "Innovación Disruptiva",
-    description: "Pioneros en técnicas revolucionarias que redefinen los límites del arte audiovisual"
-  },
-  {
-    icon: Users,
-    title: "Colaboración Élite",
-    description: "Partnerships estratégicos con visionarios que comparten nuestra pasión por la perfección"
+    icon: Heart,
+    title: "Pasión Cinematográfica", 
+    description: "El amor por el cine impulsa cada decisión creativa y técnica"
   },
   {
     icon: Award,
-    title: "Legado Internacional",
-    description: "Creadores de obras que trascienden fronteras y se consagran en la historia del cine"
+    title: "Excelencia Sin Límites",
+    description: "Buscamos la perfección en cada frame, cada corte, cada detalle"
   }
 ];
 
 export function AboutSection() {
   return (
-    <section id="about" className="py-24 px-6 bg-gradient-to-b from-black via-cinema-deep-black to-cinema-blood-red/10 film-grain">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-          {/* Content */}
-          <div className="animate-fade-in-cinematic">
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-cinema-fire-red/20 to-cinema-sunset-orange/20 backdrop-blur-sm border border-cinema-fire-red/30 rounded-full px-6 py-2 mb-8">
-              <Crown className="w-4 h-4 text-cinema-fire-red" />
-              <span className="text-cinema-fire-red font-semibold text-sm tracking-wider">MAESTROS DEL ARTE CINEMATOGRÁFICO</span>
-            </div>
+    <section id="about" className="py-24 bg-gradient-to-b from-black via-cinema-deep-black to-black relative overflow-hidden">
+      {/* Background effects */}
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-br from-cinema-fire-red/10 to-transparent rounded-full blur-3xl" />
+        <div className="absolute bottom-1/3 left-1/4 w-64 h-64 bg-gradient-to-br from-cinema-gold/10 to-transparent rounded-full blur-2xl" />
+      </div>
 
-            <h2 className="text-5xl md:text-7xl font-bold font-cinzel mb-8 leading-none">
-              <span className="gradient-text-red block">LA VISIÓN</span>
-              <span className="gradient-text-gold block">DETRÁS DEL</span>
-              <span className="text-white block">ARTE</span>
-            </h2>
-            
-            <div className="space-y-6 text-lg leading-relaxed">
-              <p className="text-gray-300">
-                <span className="text-cinema-gold font-bold">720 FILMS</span> emergió del sueño audaz de transformar 
-                cada proyecto audiovisual en una <span className="text-cinema-fire-red font-semibold">obra maestra cinematográfica</span> 
-                que perdure en la memoria colectiva de la humanidad.
-              </p>
-              
-              <p className="text-gray-300">
-                Somos <span className="gradient-text-gold font-semibold">alquimistas visuales</span> que fusionamos 
-                técnica impecable con visión artística trascendental, creando experiencias que no solo cumplen 
-                objetivos comerciales, sino que <span className="text-cinema-fire-red font-semibold">redefinen paradigmas</span> 
-                en la industria global.
-              </p>
-              
-              <p className="text-gray-300">
-                Cada producción que emprendemos está destinada a competir en los <span className="text-cinema-gold font-semibold">
-                festivales más prestigiosos del mundo</span>, porque creemos que el arte audiovisual debe aspirar 
-                siempre a la <span className="gradient-text-red font-bold">inmortalidad cinematográfica</span>.
-              </p>
-            </div>
-
-            <Button size="lg" className="btn-cinematic text-xl px-12 py-6 mt-8 hover-cinematic group">
-              <Users className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform" />
-              CONOCE A LOS VISIONARIOS
-            </Button>
+      <div className="container mx-auto px-4 relative z-10">
+        {/* Section header */}
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 mb-6 bg-gradient-to-r from-cinema-gold/10 to-cinema-warm-gold/10 border border-cinema-gold/30 rounded-full px-6 py-2">
+            <Users className="w-5 h-5 text-cinema-gold" />
+            <span className="text-cinema-gold text-sm font-bold tracking-[0.2em]">NOSOTROS</span>
           </div>
+          
+          <h2 className="text-5xl md:text-7xl font-cinzel font-black mb-6">
+            <span className="gradient-text-gold">MAESTROS</span>
+            <span className="text-white"> DEL </span>
+            <span className="gradient-text-red">ARTE</span>
+          </h2>
+          
+          <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+            Somos <span className="gradient-text-gold">visionarios cinematográficos</span> que transformamos ideas en 
+            <span className="gradient-text-red"> experiencias audiovisuales extraordinarias</span>
+          </p>
+        </div>
 
-          {/* Values Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {values.map((value, index) => (
-              <Card 
-                key={value.title} 
-                className="hover-cinematic border-0 bg-gradient-to-br from-cinema-deep-black/90 to-black/90 backdrop-blur-sm border border-cinema-gold/20 animate-fade-in-cinematic group overflow-hidden" 
-                style={{ animationDelay: `${index * 150}ms` }}
-              >
-                <CardContent className="p-8 text-center relative">
-                  {/* Background Glow */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-cinema-fire-red/5 to-cinema-sunset-orange/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  
-                  <div className="relative z-10">
-                    <div className="w-16 h-16 bg-gradient-to-br from-cinema-fire-red to-cinema-sunset-orange rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-2xl shadow-cinema-fire-red/30">
-                      <value.icon className="w-8 h-8 text-white" />
-                    </div>
-                    
-                    <h3 className="font-bold text-xl mb-4 text-white group-hover:text-cinema-gold transition-colors duration-300">
-                      {value.title}
-                    </h3>
-                    
-                    <p className="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
-                      {value.description}
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+        {/* Stats grid */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+          {stats.map((stat, index) => (
+            <div
+              key={index}
+              className="text-center group hover-cinematic"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <div className="relative mb-4">
+                <div className="w-16 h-16 bg-gradient-to-br from-cinema-fire-red to-cinema-sunset-orange rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300">
+                  <stat.icon className="w-8 h-8 text-white" />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-br from-cinema-gold/20 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 mx-auto w-16 h-16" />
+              </div>
+              
+              <div className="text-4xl md:text-5xl font-bold gradient-text-gold font-cinzel mb-2 animate-count-up">
+                {stat.number}
+              </div>
+              
+              <h3 className="text-white font-bold mb-2 tracking-wide">
+                {stat.label}
+              </h3>
+              
+              <p className="text-gray-400 text-sm">
+                {stat.description}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Story section */}
+        <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
+          <div>
+            <h3 className="text-4xl font-cinzel font-bold text-white mb-6">
+              Una <span className="gradient-text-gold">Pasión</span> que se Convirtió en <span className="gradient-text-red">Leyenda</span>
+            </h3>
+            
+            <div className="space-y-6 text-gray-300 leading-relaxed">
+              <p>
+                Desde 2016, hemos redefinido los estándares de la producción audiovisual, 
+                creando obras que no solo capturan momentos, sino que <span className="text-cinema-gold font-medium">crean emociones</span> 
+                y construyen legados.
+              </p>
+              
+              <p>
+                Nuestro enfoque combina <span className="text-cinema-gold font-medium">técnica cinematográfica clásica</span> 
+                con tecnología de vanguardia, resultando en producciones que compiten 
+                en los festivales más prestigiosos del mundo.
+              </p>
+              
+              <p>
+                Cada proyecto es una <span className="text-cinema-fire-red font-medium">colaboración íntima</span> 
+                entre nuestra visión artística y la esencia única de nuestros clientes.
+              </p>
+            </div>
+            
+            <button className="mt-8 bg-gradient-to-r from-cinema-fire-red to-cinema-sunset-orange text-white font-bold py-4 px-8 rounded-full hover:scale-105 transition-all duration-300">
+              CONOCE NUESTRO PROCESO
+            </button>
+          </div>
+          
+          <div className="relative">
+            <div className="aspect-square rounded-3xl overflow-hidden border-2 border-cinema-gold/30">
+              <img 
+                src="/placeholder.svg" 
+                alt="Equipo 720 Films"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-cinema-fire-red/20 to-transparent" />
+            </div>
+            
+            {/* Floating award badge */}
+            <div className="absolute -bottom-6 -right-6 bg-gradient-to-r from-cinema-gold to-cinema-warm-gold text-black p-6 rounded-2xl border-4 border-black">
+              <div className="text-center">
+                <Award className="w-8 h-8 mx-auto mb-2" />
+                <div className="text-sm font-bold">MEJOR PRODUCTORA</div>
+                <div className="text-xs">Festival Internacional 2024</div>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Premium Stats Section */}
-        <div className="mt-24 bg-gradient-to-r from-cinema-deep-black to-black border border-cinema-gold/30 rounded-3xl p-12 backdrop-blur-sm">
-          <h3 className="text-4xl font-bold gradient-text-gold font-cinzel text-center mb-12">
-            NÚMEROS QUE HABLAN POR SÍ SOLOS
+        {/* Values */}
+        <div>
+          <h3 className="text-4xl font-cinzel font-bold text-center text-white mb-12">
+            Nuestros <span className="gradient-text-gold">Valores</span>
           </h3>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { number: "8+", label: "Años Revolucionando", sublabel: "la Industria Audiovisual" },
-              { number: "350+", label: "Obras Maestras", sublabel: "Producidas con Excelencia" },
-              { number: "85+", label: "Clientes Visionarios", sublabel: "Que Confían en Nosotros" },
-              { number: "42+", label: "Premios Internacionales", sublabel: "en Festivales de Élite" }
-            ].map((stat, index) => (
-              <div key={stat.label} className="text-center animate-count-up group" style={{ animationDelay: `${index * 200}ms` }}>
-                <div className="text-5xl md:text-6xl font-bold gradient-text-gold font-cinzel mb-3 group-hover:animate-glow-pulse">
-                  {stat.number}
+          <div className="grid md:grid-cols-3 gap-8">
+            {values.map((value, index) => (
+              <div
+                key={index}
+                className="text-center group hover-cinematic"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="w-20 h-20 bg-gradient-to-br from-cinema-fire-red/20 to-cinema-sunset-orange/10 border border-cinema-gold/30 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:border-cinema-gold/60 transition-all duration-300">
+                  <value.icon className="w-10 h-10 text-cinema-gold group-hover:scale-110 transition-transform duration-300" />
                 </div>
-                <div className="text-white font-semibold mb-2">{stat.label}</div>
-                <div className="text-sm text-gray-400">{stat.sublabel}</div>
+                
+                <h4 className="text-xl font-bold text-white mb-4 group-hover:gradient-text-gold transition-all duration-300">
+                  {value.title}
+                </h4>
+                
+                <p className="text-gray-300 leading-relaxed">
+                  {value.description}
+                </p>
               </div>
             ))}
-          </div>
-        </div>
-
-        {/* Philosophy Section */}
-        <div className="mt-24 text-center">
-          <div className="max-w-4xl mx-auto">
-            <h3 className="text-3xl md:text-5xl font-bold gradient-text-red font-cinzel mb-8">
-              "CADA PROYECTO ES UNA SINFONÍA VISUAL QUE ASPIRA A LA ETERNIDAD"
-            </h3>
-            <p className="text-xl text-gray-300 leading-relaxed mb-8">
-              En 720 FILMS, no creamos simplemente videos. Forjamos <span className="text-cinema-gold font-semibold">legados visuales</span> 
-              que trascienden el tiempo y se graban para siempre en la memoria colectiva del arte cinematográfico mundial.
-            </p>
-            <div className="text-cinema-gold font-cinzel text-lg tracking-[0.3em]">
-              ✦ VISIÓN • ARTE • LEGADO ✦
-            </div>
           </div>
         </div>
       </div>

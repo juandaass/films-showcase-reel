@@ -1,198 +1,207 @@
-
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Play, Award, ExternalLink, Camera } from "lucide-react";
-
-const categories = ["Todos", "Videos Musicales", "Cortometrajes", "Documentales", "Comerciales"];
+import { Play, Award, Eye, Calendar } from "lucide-react";
 
 const portfolioItems = [
   {
     id: 1,
-    title: "ECLIPSE MUSICAL",
-    subtitle: "Video Musical Épico",
-    category: "Videos Musicales",
-    image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=600&fit=crop",
-    description: "Narrativa visual cinematográfica con efectos especiales de última generación",
-    awards: "Mejor Video Musical - Festival Internacional 2024",
-    duration: "4:32"
+    title: "SANGRE Y ORO",
+    category: "Video Musical",
+    year: "2024",
+    awards: "Winner - Festival Internacional de Cine",
+    description: "Una obra maestra visual que fusiona narrativa clásica con técnicas cinematográficas de vanguardia.",
+    image: "/placeholder.svg",
+    featured: true
   },
   {
     id: 2,
-    title: "SOMBRAS URBANAS",
-    subtitle: "Cortometraje Narrativo",
-    category: "Cortometrajes",
-    image: "https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=800&h=600&fit=crop",
-    description: "Drama contemporáneo con cinematografía de autor y dirección artística excepcional",
-    awards: "Palma de Oro - Festival de Cannes 2024",
-    duration: "18:45"
+    title: "ALMAS DE ACERO",
+    category: "Cortometraje",
+    year: "2023",
+    awards: "Best Short Film - Festival de Cine Independiente",
+    description: "Un relato conmovedor sobre la resiliencia humana en tiempos de adversidad, filmado con una estética visual impactante.",
+    image: "/placeholder.svg",
+    featured: false
   },
   {
     id: 3,
-    title: "RAÍCES DEL TIEMPO",
-    subtitle: "Documental Cultural",
-    category: "Documentales",
-    image: "https://images.unsplash.com/photo-1489824904134-891ab64532f1?w=800&h=600&fit=crop",
-    description: "Exploración íntima de tradiciones ancestrales con técnicas de filmación innovadoras",
-    awards: "Premio del Público - Sundance 2024",
-    duration: "52:15"
+    title: "ECOS DEL PASADO",
+    category: "Documental",
+    year: "2022",
+    awards: "Audience Award - Festival de Documentales",
+    description: "Una exploración profunda de la historia olvidada, contada a través de testimonios y material de archivo restaurado.",
+    image: "/placeholder.svg",
+    featured: false
   },
   {
     id: 4,
-    title: "REVOLUCIÓN DIGITAL",
-    subtitle: "Comercial Premium",
-    category: "Comerciales",
-    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop",
-    description: "Campaña publicitaria de lujo con producción de nivel cinematográfico",
-    awards: "León de Oro - Cannes Lions 2024",
-    duration: "1:30"
+    title: "LUXURY RIDE",
+    category: "Comercial",
+    year: "2024",
+    awards: "Best Commercial - Advertising Awards",
+    description: "Un comercial de lujo que redefine la elegancia y el estilo, con una cinematografía impecable y una banda sonora envolvente.",
+    image: "/placeholder.svg",
+    featured: true
   },
   {
     id: 5,
-    title: "SINFONÍA NOCTURNA",
-    subtitle: "Video Musical Artístico",
-    category: "Videos Musicales",
-    image: "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=800&h=600&fit=crop",
-    description: "Fusión perfecta entre música clásica y cinematografía contemporánea",
-    awards: "Mejor Dirección Artística - MTV VMAs 2024",
-    duration: "5:21"
+    title: "NOCHE ETERNA",
+    category: "Video Musical",
+    year: "2023",
+    awards: "Nominee - Music Video Awards",
+    description: "Una experiencia visual onírica que complementa la música con una narrativa abstracta y efectos visuales sorprendentes.",
+    image: "/placeholder.svg",
+    featured: false
   },
   {
     id: 6,
-    title: "FUTURO PRESENTE",
-    subtitle: "Comercial Tecnológico",
-    category: "Comerciales",
-    image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&h=600&fit=crop",
-    description: "Spot visionario con animaciones 3D hiperrealistas y efectos holográficos",
-    awards: "Gran Premio - Festival Creativity 2024",
-    duration: "2:15"
+    title: "SOMBRAS DEL IMPERIO",
+    category: "Cortometraje",
+    year: "2022",
+    awards: "Official Selection - Film Festival",
+    description: "Un thriller psicológico que explora los límites de la ambición y el poder, con actuaciones intensas y una atmósfera inquietante.",
+    image: "/placeholder.svg",
+    featured: false
   }
 ];
 
+const categories = ["Todos", "Videos Musicales", "Cortometrajes", "Documentales", "Comerciales"];
+
 export function PortfolioSection() {
   const [activeCategory, setActiveCategory] = useState("Todos");
+  const [hoveredItem, setHoveredItem] = useState<number | null>(null);
 
   const filteredItems = activeCategory === "Todos" 
     ? portfolioItems 
     : portfolioItems.filter(item => item.category === activeCategory);
 
   return (
-    <section id="portfolio" className="py-24 px-6 bg-gradient-to-b from-black to-cinema-deep-black film-grain">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-20 animate-fade-in-cinematic">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-cinema-fire-red/20 to-cinema-sunset-orange/20 backdrop-blur-sm border border-cinema-fire-red/30 rounded-full px-6 py-2 mb-8">
-            <Camera className="w-4 h-4 text-cinema-fire-red" />
-            <span className="text-cinema-fire-red font-semibold text-sm tracking-wider">OBRA MAESTRA CINEMATOGRÁFICA</span>
+    <section id="portfolio" className="py-24 bg-gradient-to-b from-black to-cinema-deep-black relative overflow-hidden">
+      {/* Background effects */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-cinema-fire-red/20 to-transparent rounded-full blur-3xl" />
+        <div className="absolute bottom-1/3 right-1/4 w-64 h-64 bg-gradient-to-br from-cinema-gold/15 to-transparent rounded-full blur-2xl" />
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-10">
+        {/* Section header */}
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 mb-6 bg-gradient-to-r from-cinema-gold/10 to-cinema-warm-gold/10 border border-cinema-gold/30 rounded-full px-6 py-2">
+            <Award className="w-5 h-5 text-cinema-gold" />
+            <span className="text-cinema-gold text-sm font-bold tracking-[0.2em]">PORTFOLIO PREMIADO</span>
           </div>
-
-          <h2 className="text-5xl md:text-8xl font-bold font-cinzel mb-8 gradient-text-red leading-none">
-            PORTFOLIO
+          
+          <h2 className="text-5xl md:text-7xl font-cinzel font-black mb-6">
+            <span className="gradient-text-gold">OBRAS</span>
+            <span className="text-white"> QUE </span> 
+            <span className="gradient-text-red">CONQUISTAN</span>
           </h2>
-          <h3 className="text-3xl md:text-5xl font-light gradient-text-gold mb-8">
-            DE ÉLITE
-          </h3>
-          <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            Una cuidadosa selección de nuestras obras más laureadas que han redefinido 
-            los estándares de la industria audiovisual internacional
+          
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            Cada proyecto es una <span className="gradient-text-gold">masterpiece</span> diseñada para 
+            <span className="gradient-text-red"> cautivar audiencias globales</span>
           </p>
         </div>
 
-        {/* Premium Category Filters */}
+        {/* Category filters */}
         <div className="flex flex-wrap justify-center gap-4 mb-16">
           {categories.map((category) => (
-            <Button
+            <button
               key={category}
-              variant={activeCategory === category ? "default" : "outline"}
               onClick={() => setActiveCategory(category)}
               className={`
-                rounded-full px-8 py-3 font-semibold tracking-wide transition-all duration-300 border-2
-                ${activeCategory === category 
-                  ? 'bg-gradient-to-r from-cinema-fire-red to-cinema-sunset-orange text-white border-cinema-gold shadow-lg shadow-cinema-fire-red/30' 
-                  : 'bg-transparent text-cinema-gold border-cinema-gold/50 hover:border-cinema-gold hover:bg-cinema-gold/10'
+                px-8 py-3 rounded-full font-medium tracking-wide transition-all duration-300
+                ${activeCategory === category
+                  ? 'bg-gradient-to-r from-cinema-fire-red to-cinema-sunset-orange text-white border-2 border-cinema-gold/50'
+                  : 'border-2 border-cinema-gold/30 text-cinema-gold hover:bg-cinema-gold/10'
                 }
               `}
             >
               {category}
-            </Button>
+            </button>
           ))}
         </div>
 
-        {/* Premium Portfolio Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        {/* Portfolio grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredItems.map((item, index) => (
-            <Card 
-              key={item.id} 
-              className="group hover-cinematic overflow-hidden border-0 bg-gradient-to-b from-cinema-deep-black/80 to-black/80 backdrop-blur-sm border border-cinema-gold/20 animate-fade-in-cinematic" 
-              style={{ animationDelay: `${index * 150}ms` }}
+            <div
+              key={item.id}
+              className="group relative overflow-hidden rounded-2xl bg-gradient-to-b from-cinema-deep-black to-black border border-cinema-gold/20 hover-cinematic"
+              onMouseEnter={() => setHoveredItem(item.id)}
+              onMouseLeave={() => setHoveredItem(null)}
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <CardContent className="p-0">
-                <div className="relative overflow-hidden">
-                  <img 
-                    src={item.image} 
-                    alt={item.title}
-                    className="w-full h-80 object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
-                  />
-                  
-                  {/* Premium Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-cinema-fire-red/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500">
-                    <div className="absolute inset-0 bg-cinema-blood-red/10"></div>
+              {/* Image container */}
+              <div className="relative aspect-video overflow-hidden">
+                <img 
+                  src={item.image} 
+                  alt={item.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                
+                {/* Overlay gradients */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
+                <div className="absolute inset-0 bg-gradient-to-br from-cinema-fire-red/20 to-cinema-gold/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                {/* Play button */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                  <div className="w-16 h-16 bg-cinema-gold/90 rounded-full flex items-center justify-center backdrop-blur-sm">
+                    <Play className="w-6 h-6 text-black ml-1" />
                   </div>
+                </div>
 
-                  {/* Awards Badge */}
-                  <div className="absolute top-4 left-4 bg-gradient-to-r from-cinema-gold to-cinema-warm-gold text-black px-3 py-1 rounded-full text-xs font-bold">
-                    <Award className="w-3 h-3 inline mr-1" />
-                    PREMIADO
+                {/* Featured badge */}
+                {item.featured && (
+                  <div className="absolute top-4 left-4 bg-gradient-to-r from-cinema-fire-red to-cinema-sunset-orange text-white px-3 py-1 rounded-full text-xs font-bold tracking-wider">
+                    DESTACADO
                   </div>
+                )}
 
-                  {/* Duration Badge */}
-                  <div className="absolute top-4 right-4 bg-black/80 backdrop-blur-sm text-cinema-gold px-3 py-1 rounded-full text-xs font-medium">
-                    {item.duration}
-                  </div>
-                  
-                  {/* Play Button */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
-                    <Button 
-                      size="lg" 
-                      className="bg-cinema-fire-red/90 hover:bg-cinema-fire-red text-white border-2 border-cinema-gold rounded-full p-6"
-                    >
-                      <Play className="w-8 h-8" />
-                    </Button>
-                  </div>
+                {/* View count */}
+                <div className="absolute top-4 right-4 flex items-center gap-1 bg-black/50 backdrop-blur-sm rounded-full px-3 py-1">
+                  <Eye className="w-3 h-3 text-cinema-gold" />
+                  <span className="text-cinema-gold text-xs font-medium">2.5M</span>
+                </div>
+              </div>
 
-                  {/* Bottom Info Overlay */}
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                    <h3 className="font-bold text-xl mb-1 text-white">{item.title}</h3>
-                    <p className="text-cinema-gold text-sm font-medium mb-2">{item.subtitle}</p>
-                    <p className="text-gray-300 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
-                      {item.description}
-                    </p>
+              {/* Content */}
+              <div className="p-6">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-cinema-gold text-sm font-bold tracking-wider">{item.category}</span>
+                  <div className="flex items-center gap-1 text-gray-400 text-sm">
+                    <Calendar className="w-3 h-3" />
+                    <span>{item.year}</span>
                   </div>
                 </div>
                 
-                <div className="p-6 bg-gradient-to-b from-cinema-deep-black to-black">
-                  <span className="inline-block px-4 py-2 bg-gradient-to-r from-cinema-fire-red/20 to-cinema-sunset-orange/20 text-cinema-fire-red text-sm rounded-full mb-4 border border-cinema-fire-red/30">
-                    {item.category}
-                  </span>
-                  <h3 className="font-bold text-xl mb-2 text-white">{item.title}</h3>
-                  <p className="text-cinema-gold text-sm font-medium mb-3">{item.subtitle}</p>
-                  <p className="text-gray-400 text-sm leading-relaxed mb-4">{item.description}</p>
-                  
-                  {/* Awards */}
-                  <div className="flex items-center gap-2 text-xs text-cinema-gold">
-                    <Award className="w-4 h-4" />
-                    <span>{item.awards}</span>
-                  </div>
+                <h3 className="text-2xl font-cinzel font-bold text-white mb-3 group-hover:gradient-text-gold transition-all duration-300">
+                  {item.title}
+                </h3>
+                
+                <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                  {item.description}
+                </p>
+
+                {/* Awards */}
+                <div className="flex items-center gap-2 mb-4">
+                  <Award className="w-4 h-4 text-cinema-gold" />
+                  <span className="text-cinema-gold text-xs font-medium">{item.awards}</span>
                 </div>
-              </CardContent>
-            </Card>
+
+                {/* Action button */}
+                <button className="w-full bg-gradient-to-r from-cinema-fire-red/80 to-cinema-sunset-orange/80 text-white font-bold py-3 rounded-xl hover:from-cinema-fire-red hover:to-cinema-sunset-orange transition-all duration-300 group-hover:scale-105">
+                  VER PROYECTO
+                </button>
+              </div>
+            </div>
           ))}
         </div>
 
+        {/* Call to action */}
         <div className="text-center mt-16">
-          <Button size="lg" className="btn-cinematic text-xl px-12 py-6 hover-cinematic group">
-            <ExternalLink className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform" />
-            EXPLORA PORTFOLIO COMPLETO
-          </Button>
+          <button className="bg-gradient-to-r from-cinema-gold to-cinema-warm-gold text-black font-bold py-4 px-12 rounded-full hover:scale-105 transition-all duration-300">
+            VER TODO EL PORTFOLIO
+          </button>
         </div>
       </div>
     </section>
